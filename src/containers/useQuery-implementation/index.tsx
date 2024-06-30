@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import axios from 'axios';
 import SearchBar from 'components/searchBar';
 import Table from 'components/table';
 import Loading from 'components/loading';
@@ -41,7 +40,6 @@ const UseQueryComp = () => {
     const [filteredData, setFilteredData] = useState<Array<Object>>([]);
     const [modalData, setModalData] = useState<any>(null);
     const [modalVisible, setModalVisible] = useState<boolean>(false);
-    console.log('name', name);
     /* Note: If http://randomuser.me API have supported searching users by name as a query param.
     then below function will be 
     const { isLoading, isError, data, isFetching } = useQuery('random-users', () => fetchRandomUsers(name), {
@@ -62,7 +60,7 @@ const UseQueryComp = () => {
 
     useEffect(() => {
         if (!(isLoading || isFetching)) setFilteredData(data?.data?.results);
-    }, [data]);
+    }, [data, isLoading, isFetching]);
 
     useEffect(() => {
         //As searching by query param is not supported so used filtering out mechanism

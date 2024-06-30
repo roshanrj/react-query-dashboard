@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import axios from 'axios';
 import SearchBar from 'components/searchBar';
 import Table from 'components/table';
 import Loading from 'components/loading';
@@ -55,14 +54,14 @@ const UseInfiniteQueryComp = () => {
     const [modalVisible, setModalVisible] = useState<boolean>(false);
     const {
         data,
-        error,
+        isError,
         isLoading,
         isFetching,
         isFetchingNextPage,
         fetchNextPage,
         hasNextPage,
         refetch,
-      } = useInfiniteQuery(
+      }:any = useInfiniteQuery(
     'users',
     ({ pageParam = 1 }) => fetchUsersByParams({ pageParam }),
     {
@@ -79,11 +78,11 @@ const UseInfiniteQueryComp = () => {
 
     useEffect(() => {
         refetch();
-    }, []);
+    }, [refetch]);
 
     useEffect(() => {
         if (!(isLoading || isFetching)) setFilteredData(data?.pages?.[0]?.results);
-    }, [data]);
+    }, [data, isLoading, isFetching]);
     
     useEffect(() => {
         //As searching by query param is not supported so used filtering out mechanism
@@ -102,6 +101,7 @@ const UseInfiniteQueryComp = () => {
             <h3>Implementation using useInfiniteQuery Hook</h3>
             <SearchBar {...{ name, setName }} />
             <div style={{ height: '75vh', overflow: 'auto'}}>
+                {isError && <div>Error: {isError?.message}</div>}
                 {
                     isLoading || isFetching ? <DivCenter><Loading /></DivCenter> : (Array.isArray(tableData) && tableData.length) ? <Table {...{ columns, data: tableData, handleRowClick }}/> : <NoDataFound>No Data Found!</NoDataFound>
                 }
