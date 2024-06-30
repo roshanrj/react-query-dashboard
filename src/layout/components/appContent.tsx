@@ -21,6 +21,7 @@ const AppContent = ({ setDisplaySidebar}: { setDisplaySidebar: React.Dispatch<Re
     <Content onClick={() => setDisplaySidebar(false)} role='button'>
         <Suspense fallback={<div className="children-line-loader"><Loading /></div>}>
             <Routes>
+                <Route key='use-query' path='/' element={<UseQueryComponent />} />
                 <Route key='use-query-implementation' path='/use-query' element={<UseQueryComponent />} />
                 <Route key='use-infinite-query-implementation' path='/use-infinite-query' element={<UseInfiniteComponent />} />
             </Routes>
