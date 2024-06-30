@@ -38,10 +38,15 @@ type navBarProp = {
 const AppNavbar:React.FC<navBarProp> = ({ setDisplaySidebar }) => {
     return(
         <NavBar>
-            <HamburgerIcon type="button" className="icon" onClick={() => setDisplaySidebar(prev => !prev)}>
-                <i className="fa fa-bars"></i>
-            </HamburgerIcon>
-            <button type="button" className='guest-name'>Welcome RoshanRJ</button>
+            <div>
+                <HamburgerIcon type="button" className="icon" onClick={() => setDisplaySidebar(prev => !prev)}>
+                    <i className="fa fa-bars"></i>
+                </HamburgerIcon>
+                <span style={{ color: '#FFFFFF',verticalAlign: 'middle', padding: 5}}>Menu</span>
+            </div>
+            <div>
+                <button type="button" className='guest-name'>Welcome RoshanRJ</button>
+            </div>
         </NavBar>
     );
 };

@@ -42,12 +42,10 @@ const ModalData = styled.div`
         display: inline-block;
         width: 110px;
     }
-    
-
 `;
 
 const ModalContent = ({ data: { login: { uuid = '' } = {}} = {} }:any) => {
-    const { data, error, isLoading }: any = useQuery(
+    const { data, error, isLoading }:any = useQuery(
         ['userDetails', uuid],
         () => fetchUserDetails(uuid),
         {

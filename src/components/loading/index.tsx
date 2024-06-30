@@ -8,9 +8,7 @@ interface LoadingProps {
 
 const Loading: React.FC<LoadingProps> = ({ children, style }) => (
   <LoadingCompoent style={style}>
-    <div className="loader-line"></div>
-    <div className="spinner" style={{ width: 60 }}>
-    </div>
+    <div className="loader" />
     {children}
   </LoadingCompoent>
 );

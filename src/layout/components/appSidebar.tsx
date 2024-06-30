@@ -15,8 +15,12 @@ const SideBar:any = styled.div`
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
+    & > a.link{
+        background: #FFFFFF;
+        opacity: 0.6;
+    }
     & > a {
-        padding: 8px 8px 8px 32px;
+        padding: 8px 8px 8px 10px;
         text-decoration: none;
         font-size: 1.2rem;
         color: #818181;
@@ -73,7 +77,8 @@ const SideDrawer: React.FC<appDrawerProp> = ({ displaySidebar, setDisplaySidebar
 
 
 const MobileDrawer:React.FC<appDrawerProp> = ({ displaySidebar }) => (<MobileBar visible={displaySidebar}>
-    <a href="#">Users</a>
+    <Link to="/use-query">Use Query Route</Link>
+    <Link to="/use-infinite-query">Use Infinite Query Route</Link>
 </MobileBar>);
 
 const AppSidebar:React.FC<appDrawerProp> = ({ displaySidebar, setDisplaySidebar }) => {

@@ -19,17 +19,21 @@ const ModalPopup:any = styled.div`
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 60%;
         border-radius: 20px;
+        position: relative;
     }
     .close {
         color: #aaa;
-        float: right;
         font-size: 28px;
         font-weight: bold;
         background: transparent;
         outline: none;
         border: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 10px;
     }
     .close:hover,
     .close:focus {

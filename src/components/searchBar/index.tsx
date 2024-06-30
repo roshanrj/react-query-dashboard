@@ -1,6 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import debounce from 'utils/debounce';
 
 const SearchBarWrapper = styled.div`
     background-color: #e9e9e9;
@@ -27,11 +26,9 @@ type searchBarProps = {
     setName: React.Dispatch<React.SetStateAction<string>>,
 }
 const SearchBar: React.FC<searchBarProps> = ({ name, setName }) => {
-    // const [input, setInput] = useState<string>('');
     return (
         <SearchBarWrapper className="seach-wrapper">
-            <input type="text" placeholder="Search by name..." name="search" value={name} onChange={({target: { value}}) => setName(value)} />
-            {/* <button type="submit" onSubmit={() => setName(input)}><i className="fa fa-search"></i></button>  */}
+            <input type="text" placeholder="Search by name..." name="search" value={name} onChange={({target: { value }}) => setName(value)} />
         </SearchBarWrapper>
     );
 };

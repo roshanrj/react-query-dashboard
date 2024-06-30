@@ -6,7 +6,6 @@ const UseQueryComponent = React.lazy(() => import('../../containers/useQuery-imp
 const UseInfiniteComponent = React.lazy(() => import('../../containers/useInfinite-implementation'));
 
 const Content = styled.div`
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -18,7 +17,6 @@ const Content = styled.div`
 `;
 
 const AppContent = ({ setDisplaySidebar}: { setDisplaySidebar: React.Dispatch<React.SetStateAction<boolean>>}) => {
-    debugger;
     return (
     <Content onClick={() => setDisplaySidebar(false)} role='button'>
         <Suspense fallback={<div className="children-line-loader"><Loading /></div>}>
