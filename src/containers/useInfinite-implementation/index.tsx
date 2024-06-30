@@ -100,7 +100,7 @@ const UseInfiniteQueryComp = () => {
         <div>
             <h3>Implementation using useInfiniteQuery Hook</h3>
             <SearchBar {...{ name, setName }} />
-            <div style={{ height: '75vh', overflow: 'auto'}}>
+            <div style={{ height: '65vh', overflow: 'auto'}}>
                 {isError && <div>Error: {isError?.message}</div>}
                 {
                     isLoading || isFetching ? <DivCenter><Loading /></DivCenter> : (Array.isArray(tableData) && tableData.length) ? <Table {...{ columns, data: tableData, handleRowClick }}/> : <NoDataFound>No Data Found!</NoDataFound>

@@ -14,7 +14,10 @@ const TableComp = styled.table `
         text-align: left;
     }
     & tr > th, tr > td {
-        padding: 12px 15px;
+        padding: 8px 15px;
+    }
+    tr > td > img{
+        max-width: 40px;
     }
     & > tbody tr {
         cursor: pointer;
