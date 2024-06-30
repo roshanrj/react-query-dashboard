@@ -12,7 +12,7 @@ const ModalPopup:any = styled.div`
   overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
-  transition: 0.5s;
+  transition: 0.5s ease-out;
   border-radius: 15px;
   .modal-content {
         background-color: #fefefe;

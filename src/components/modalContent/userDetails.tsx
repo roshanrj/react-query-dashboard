@@ -3,14 +3,15 @@ import React from 'react';
 const UserDetails = ({ data }:any) => {
     return (
         <div className='modal-data'>
+            <div className='modal-header'><h2>Name: {data.name.first} {data.name.last}</h2></div>
             <div>
                 <img src={data.picture.medium} alt={`${data.name.first} image`} loading="lazy" />
             </div>
             <div>
-                <div className='fields'>
+                {/* <div className='fields'>
                     <span className='label'>Firstname</span><span>{data.name.first}</span>
                     <span className='label'>Lastname</span><span>{data.name.last}</span>
-                </div>
+                </div> */}
                 <div className='fields'>
                     <span className='label'>DOB</span><span>{new Date(data.dob.date).toLocaleString('en-IN', { day: '2-digit', month: '2-digit', year: 'numeric' })}</span>
                     <span className='label'>Age</span><span>{data.dob.age}</span>

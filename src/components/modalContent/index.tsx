@@ -17,7 +17,7 @@ const ModalData = styled.div`
     .modal-header > h2{
         background-color: #009879;
         color: #ffffff;
-        width: 50%;
+        /* width: 50%; */
         padding: 0 5px;
         text-align: center;
         border-radius: 5px;
@@ -60,7 +60,6 @@ const ModalContent = ({ data: { login: { uuid = '' } = {}} = {} }:any) => {
     if (!uuid) return null;
     return (
         <ModalData>
-            <div className='modal-header'><h2>User Details</h2></div>
             { isLoading && <div className='loading'><LoadingComponent /></div>}
             {error && <div>Error: {error?.message}</div>}
             {
